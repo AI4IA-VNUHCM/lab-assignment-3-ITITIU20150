@@ -14,8 +14,34 @@ ______________________________________
 
 int Ex4(int arr[], int n){
 	//Your codes here
-	
+	int kt;
+	if (arr[0] >= arr[1])
+	{
+		kt = -1;
+		for (int i = 0; i < n - 1; i++)
+			for (int j = i + 1; j < n; j++)
+			{
+				if (arr[i] < arr[j])
+				{
+					kt = 0;
+					break;
+				}
+			}
+	}
+	else
+	{
+		kt = 1;
+		for (int i = 0; i < n - 1; i++)
+			for (int j = i + 1; j < n; j++)
+			{
+				if (arr[i] > arr[j])
+					kt = 0;
+				break;
+			}
+	}
+	return kt;
 }
+
 
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
